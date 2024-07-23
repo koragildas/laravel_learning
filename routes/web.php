@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\test1Controller;
 use App\Http\Controllers\testController;
+use App\Http\Controllers\usercontroller;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -18,6 +19,8 @@ Route::get('/register', function () {
 
 
 Route::resource('test', test1Controller::class );
+Route::resource('users', UserController::class );
+
 
 route::get('/blog', function(Request $request){
    //fonction permettant de me retourner le nom passer en parametre 
