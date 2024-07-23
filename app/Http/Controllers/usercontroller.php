@@ -6,9 +6,28 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class usercontroller extends Controller
 {
+    public function showLoginForm()
+    {
+        return view('login');
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->only('username', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('welcome');
+        }
+
+        return back()->withErrors([
+            'username' => 'Les informations d\'identification fournies ne correspondent pas à nos enregistrements.',
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      */
