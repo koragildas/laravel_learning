@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -19,7 +20,8 @@ Route::get('/register', function () {
 
 
 Route::resource('test', test1Controller::class );
-Route::resource('users', UserController::class );
+Route::resource('users', userController::class );
+
 
 
 route::get('/blog', function(Request $request){

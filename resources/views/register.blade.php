@@ -12,44 +12,61 @@
     <section class="section_Register">
         <div class="container_Register">
             <h1 class="text-white mb-3 text-center">Registration</h1>
-            <form action="">
+            <form method="Post" action="{{ route('users.store') }}">
+                @csrf
                <div class="mb-3">
                 <label for="name" class="w-100 d-flex justify-content-between align-items-center">Name :
-                    <input type="text" class="w-80 rounded" >
+                    <input type="text" class="w-80 rounded" name="name" id="name" value="{{ old('name') }}" required autofocus >
+                    @error('name')
+                        <div >{{ $message }}</div>
+                    @enderror
                 </label>
                </div>
                <div class="mb-3">
-                <label for="name" class="w-100 d-flex justify-content-between align-items-center">Username:
-                    <input type="text" class="w-80 rounded" >
+                <label for="username" class="w-100 d-flex justify-content-between align-items-center">Username:
+                    <input type="text" class="w-80 rounded" name="username" id="username" value="{{ old('username') }}" required autofocus>
+                    @error('username')
+                    <div >{{ $message }}</div>
+                @enderror
                 </label>
                </div>
                <div class="mb-3">
-                <label for="name" class="w-100 d-flex justify-content-between align-items-center">Email:
-                    <input type="email" class="w-80 rounded" >
+                <label for="email" class="w-100 d-flex justify-content-between align-items-center">Email:
+                    <input type="email" class="w-80 rounded" name="email" id="email" value="{{ old('email')  }}" required autofocus>
+                    @error('email')
+                    <div >{{ $message }}</div>
+                @enderror
                 </label>
                </div>
                <div class="mb-3">
-                <label for="name" class="w-100 d-flex justify-content-between align-items-center">Password:
-                    <input type="password" class="w-80 rounded" >
+                <label for="password" class="w-100 d-flex justify-content-between align-items-center">Password:
+                    <input type="password" class="w-80 rounded" name="password" id="password" required autofocus>
+                    @error('password')
+                    <div >{{ $message }}</div>
+                @enderror
                 </label>
                </div>
                <div class="mb-3">
-                <label for="name" class="w-100 d-flex justify-content-between align-items-center ">Confirm password:
-                    <input type="password" class="w-80 rounded" >
+                <label for="password_confirmation" class="w-100 d-flex justify-content-between align-items-center ">Confirm password:
+                    <input type="password" class="w-80 rounded" name="password_confirmation" id="password_confirmation">
                 </label>
                </div>
                         <div class="mb-3 d-flex justify-content-between align-items-center w-100">
                           
                           <p class="w-50s">Sex :</p>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="sex" value="male">
                                 <label class="form-check-label" for="exampleCheck1">Men</label>
                             </div>
 
                             <div class="mb-3 form-check ms-4">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="sex" value="female">
                                 <label class="form-check-label" for="exampleCheck1">Women</label>
                             </div>
+
+                            @error('sex')
+                            <div >{{ $message }}</div>
+                        @enderror
                         </div>
                         <button type="submit" class="btn btn-outline-light">Submit</button>  
             </form>
