@@ -13,7 +13,12 @@ Route::get('/welcome', function () {
 Route::get('/login', function () {
     return view('login');
 })->name('login');
+
+Route::get('/header', function () {
+    return view('header');
+})->name('header');
 Route::post('/login', [userController::class, 'login']);
+
 
 
 Route::get('/register', function () {

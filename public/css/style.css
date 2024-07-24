@@ -78,3 +78,41 @@
     height: 100%;
     border-radius: 20px;
 }
+
+
+/* style du nave bar */
+
+.container_h {
+    background-color: grey;
+}
+
+.section_h {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../css/pexels-sai-krishna-179319646-11781470.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container_text h1 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #a7a9c6;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    font-family: sans-serif;
+    color: antiquewhite;
+}
+
+.container_text h2 {
+    background-color: #a7a9c6;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    font-family: sans-serif;
+    color: antiquewhite;
+}
