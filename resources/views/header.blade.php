@@ -28,8 +28,8 @@
           </ul>
     
           <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2"  >Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+            <button type="button" class="btn btn-outline-primary me-2"  ><a href="{{ route('login') }}">login</a></button>
+            <button type="button" class="btn btn-primary"><a href="{{ route('register') }}">sign-up</a></button>
           </div>
         </header>
       </div>
